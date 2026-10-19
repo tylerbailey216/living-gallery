@@ -35,3 +35,20 @@ The existing experience is a **2D interactive AR-style simulation**, not live ca
 5. In a separate feature branch, prototype MindAR image-target tracking using the physical painting as target.
 
 Do not assume a static scene is genuine AR. Keep the existing demo working while adding new features.
+
+## Interaction verification after the stability update
+
+The gallery keeps its original artwork and simulated AR behavior. Motion is now a toggle; Reset also stops motion/audio and recenters the scene. Reduced-motion preferences disable scene movement and animated effects. Background tabs pause particle rendering and stop sound.
+
+Desktop and iPhone Safari checks:
+
+1. Tap Awaken, then open and close each hotspot. Guitar should play a short synthesized sequence if audio is available.
+2. Reset and awaken again. Check that the scene recenters and motion is disabled.
+3. Swipe/drag the scene, then tap controls and panel text. Buttons should still respond normally.
+4. Enable motion from its button, accept permission if prompted, then disable it. Test denied permission too.
+5. Open a hotspot with the keyboard: focus should move to Close, Tab should stay in the dialog, and Escape should return focus to the hotspot.
+6. Toggle fullscreen where supported. If unavailable, check the fallback message.
+7. Enable the device's Reduce Motion setting: particles, pulsing, glow animation, and scene movement should stop.
+8. Check portrait and landscape layouts, safe areas, and pinch zoom. Switch away and back to check that animation resumes only when appropriate.
+
+Local automated checks cover JavaScript syntax and mocked interaction state transitions. Actual Safari audio, sensor permissions, gestures, and visual layout still require device testing.
